@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Leyla Çevik | Modern CV</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+
+<!-- FontAwesome Sosyal İkonlar -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style>
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #E5E5E5;
+    color: #333333;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 40px auto 60px auto;
+    padding: 0 1.2rem;
+  }
+
+  section {
+    margin-bottom: 5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation-fill-mode: forwards;
+    background: white;
+    padding: 2rem 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  section:hover {
+    box-shadow: 0 12px 30px rgb(0 0 0 / 0.15);
+  }
+
+  section.visible {
+    animation: fadeUp 1s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  #about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  #about img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 6px solid #F2994A;
+    box-shadow: 0 0 25px #F2994A99;
+    object-fit: cover;
+    filter: drop-shadow(0 0 15px #F2994A88);
+    animation: glowPulse 3s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% {
+      box-shadow: 0 0 20px #F2994A99, 0 0 40px #F2994A88;
+    }
+    50% {
+      box-shadow: 0 0 40px #F2B46Aee, 0 0 70px #F2B46Aee;
+    }
+  }
+
+  #about .info {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  #about .info h1 {
+    font-size: 3rem;
+    margin-bottom: 0.3rem;
+    color: #152250;
+    text-shadow: 0 0 10px #F2994A88;
+  }
+
+  #about .info p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  #about .info strong {
+    color: #F2994A;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    color: #152250;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background: #F2994A;
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+    box-shadow: 0 0 8px #F2994A99;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 1.4rem;
+  }
+
+  ul li {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 0.9rem;
+    position: relative;
+    padding-left: 1.6rem;
+    transition: color 0.3s ease;
+  }
+
+  ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #F2994A;
+    font-weight: 700;
+  }
+
+  ul li:hover {
+    color: #F2994A;
+  }
+
+  #contact p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  #contact a {
+    color: #152250;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  #contact a:hover {
+    border-color: #F2994A;
+  }
+
+  footer {
+    background: #152250;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: inset 0 1px 10px #00000099;
+    color: #E5E5E5;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .social-icons a {
+    color: #F2994A;
+    font-size: 2.8rem;
+    transition: color 0.5s ease, transform 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #E5E5E5;
+    transform: scale(1.4);
+  }
+
+  @media (max-width: 750px) {
+    main {
+      margin: 40px auto 60px auto;
+      padding: 0 1rem;
+    }
+    #about {
+      flex-direction: column;
+      text-align: center;
+    }
+    #about img {
+      margin: 0 auto;
+      width: 180px;
+      height: 180px;
+    }
+    #about .info h1 {
+      font-size: 2.4rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    ul li {
+      font-size: 1rem;
+    }
+    section {
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 3rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <section id="about">
+    <img src="myfoto.jpg" alt="Leyla Çevik Fotoğraf" />
+    <div class="info">
+      <h1>Leyla Çevik</h1>
+      <p><strong>Bilgisayar Programcısı</strong></p>
+      <p>Fırat Üniversitesi Teknik Bilimler MYO mezunuyum. Teknolojiye ve yazılıma olan ilgimle kendimi sürekli geliştiriyorum. Samsun'da yaşıyorum ve yazılım alanında kariyer hedefliyorum.</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Eğitim</h2>
+    <ul>
+      <li>2022-2024 - Fırat Üniversitesi, Bilgisayar Programcılığı</li>
+    </ul>
+  </section>
+
+  <section id="internship">
+    <h2>Staj Deneyimi</h2>
+    <ul>
+      <li><strong>Canik Belediyesi, Samsun (Yaz 2023)</strong></li>
+      <li>Yazılım geliştirme ve web projelerinde destek sağladım.</li>
+      <li>Veri yönetimi ve uygulama geliştirme süreçlerinde yer aldım.</li>
+      <li>Takım çalışması ve proje takibi konularında deneyim kazandım.</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Yetenekler</h2>
+    <ul>
+      <li>C#</li>
+      <li>Java</li>
+      <li>HTML / CSS</li>
+      <li>Microsoft Office Programları</li>
+    </ul>
+  </section>
+
+  <section id="certificates">
+    <h2>Sertifikalar</h2>
+    <ul>
+      <li>İşletim Sistemlerine Giriş</li>
+      <li>Bilgi Güvenliğine Giriş</li>
+      <li>Ağ Temelleri</li>
+      <li>C# ile Algoritma ve Programlama</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>İletişim</h2>
+    <p><strong>Telefon:</strong> 0541 480 66 43</p>
+    <p><strong>E-posta:</strong> <a href="mailto:leyla.cevik55@gmail.com">leyla.cevik55@gmail.com</a></p>
+    <p><strong>Adres:</strong> Karşıyaka mah. Kaniye sokak, Kaniye apt No: 103/4, Canik/SAMSUN</p>
+  </section>
+</main>
+
+<footer>
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/leyla-%C3%A7evik-5866912a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/leylacvk" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/leylcevik" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+  <p>© 2025 Leyla Çevik - Tüm hakları saklıdır.</p>
+</footer>
+
+<!-- WhatsApp Butonu -->
+<a href="https://wa.me/905414806643" target="_blank" style="
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
